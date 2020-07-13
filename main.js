@@ -1,12 +1,12 @@
-var cateBnt = document.querySelectorAll(".category__btn");
-addEventListener("click", addActive);
+"use strict";
+// Make nabar transparent when it is on the top
+const navbar = document.querySelector("#navbar");
+const navbarHeight = navbar.getBoundingClientRect().height;
 
-function addActive() {
-  cateBnt.classList.add("active");
-}
-
-function init() {
-  addActive();
-}
-
-init();
+document.addEventListener("scroll", () => {
+  if (window.scrollY > navbarHeight) {
+    navbar.classList.add("navbar--dark");
+  } else {
+    navbar.classList.remove("navbar--dark");
+  }
+});
