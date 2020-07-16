@@ -28,6 +28,26 @@ homeContactBtn.addEventListener("click", (event) => {
   scrollIntoView("#contact");
 });
 
+// make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  home.style.opacity = 1 - scrollY / homeHeight;
+});
+
+// show "arrow up" when scrolling down
+const arrowUp = document.querySelector(".arrow-up");
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
 function scrollIntoView(selecter) {
   const scrollTo = document.querySelector(selecter);
   scrollTo.scrollIntoView({ behavior: "smooth" });

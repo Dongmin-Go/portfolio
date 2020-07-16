@@ -447,6 +447,24 @@ a {
 .testimonial__speech-bubble a {
   color: var(--color-pink);
 }
+
+/* arrow up */
+.arrow-up {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  font-size: var(--font-large);
+  color: var(--color-dark-pink);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--animation-duration) ease-in;
+}
+.arrow-up.visible {
+  pointer-events: auto;
+  bottom: 20px;
+  opacity: 1;
+}
+
 /* Contact */
 #contact {
   background-color: var(--color-pink);
