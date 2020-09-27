@@ -9,9 +9,9 @@
 
   --color-dark-white: #bdbdbd;
 
-  --color-pink: #fe918d;
+  --color-pink: #5c5d5e;
 
-  --color-dark-pink: #ff6863;
+  --color-dark-pink: #181818;
 
   --color-dark-grey: #4d4d4d;
 
@@ -21,9 +21,9 @@
 
   --color-blue: #73aace;
 
-  --color-yellow: #fff7d1;
+  --color-yellow: #eaf7ff;
 
-  --color-orange: #feb546;
+  --color-orange: #3b3a3a;
 
   --color-black: #000000;
 
@@ -174,10 +174,10 @@ a {
 
 /* Home */
 #home {
-  background: url(imgs/background.png) center/cover no-repeat;
+  background: url(imgs/dongmin\'s\ profile\ photo.jpg) center/cover no-repeat;
   text-align: center;
   padding: 40px;
-  padding-top: 120px;
+  padding-top: 500px;
 }
 
 .home__avatar {
@@ -200,6 +200,9 @@ a {
   border: 2px solid var(--color-white);
   border-radius: var(--border-radius-size);
   color: var(--color-white);
+}
+.home__contact:hover {
+  background-color: var(--color-orange);
 }
 
 /* section common */
@@ -336,12 +339,13 @@ a {
   border-radius: var(--border-radius-size);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 5px;
 }
 
 .category__count {
@@ -352,9 +356,9 @@ a {
   height: 24px;
   line-height: 24px;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -512,8 +516,25 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+
+    --font-large: 30px;
+
+    --font-medium: 18px;
+
+    --font-regular: 16px;
+
+    --font-small: 14px;
+
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-bnt {
     display: block;
+    top: 22px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -535,24 +556,54 @@ a {
     display: flex;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 45px;
+  }
+
   .about__majors {
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
+  }
+  .work__categories {
+    margin: 20px 0;
+  }
+
+  .category__btn {
+    width: 100%;
+    margin: 5px 10px;
   }
 
   .project {
     flex-grow: 1;
   }
 
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+    order: -1;
+  }
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .arrow-up {
+    font-size: 35px;
   }
 }
