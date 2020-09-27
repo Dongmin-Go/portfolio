@@ -74,11 +74,11 @@ workBtnContainer.addEventListener("click", (e) => {
   projectContainer.classList.add("anim-out");
 
   setTimeout(() => {
-    projects.forEach((project) => {
-      if (filter === "*" || filter === project.dataset.type) {
-        project.classList.remove("invisible");
+    projects.forEach((v) => {
+      if (filter === "*" || filter === v.dataset.type) {
+        v.classList.remove("invisible");
       } else {
-        project.classList.add("invisible");
+        v.classList.add("invisible");
       }
     });
     projectContainer.classList.remove("anim-out");
